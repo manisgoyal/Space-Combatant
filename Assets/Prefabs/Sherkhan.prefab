@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8777766057050207214}
   - component: {fileID: 3508506826397026451}
   - component: {fileID: 707166082932715656}
+  - component: {fileID: 1455092968}
   m_Layer: 0
   m_Name: Sherkhan
   m_TagString: Untagged
@@ -155,3 +156,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1455092968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8777766057050207215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70770cec045a4ed499d68e98a2023242, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

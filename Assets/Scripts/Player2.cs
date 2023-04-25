@@ -3,12 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player2 : MonoBehaviour
 {
     [SerializeField]
     private float moveForce = 10f;
     [SerializeField]
-    private float jumpForce = 5f;
+    private float jumpForce = 11f;
 
 
     private float movX;
@@ -17,11 +17,10 @@ public class Player : MonoBehaviour
     private Rigidbody2D myBody;
 
     private SpriteRenderer sr;
-    
+
     private Animator anim;
-    private bool onGround = false;
+
     private string WALK_ANIMATION = "Walk";
-    private string GROUND_TAG = "Ground";
     // Start is called before the first frame update
     private void Awake()
     {
@@ -31,23 +30,17 @@ public class Player : MonoBehaviour
     }
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
         moveKeyBoard();
         animatePlayer();
-        //jumpPlayer();
-        
     }
 
-
-    private void FixedUpdate()
-    {
-      jumpPlayer();
-    }
     private void moveKeyBoard()
     {
         movX = Input.GetAxisRaw("Horizontal");
@@ -61,12 +54,14 @@ public class Player : MonoBehaviour
 
     private void animatePlayer()
     {
-        if(movX > 0f)
+        if (movX > 0f)
         {
             // going right
             sr.flipX = false;
             anim.SetBool(WALK_ANIMATION, true);
-        }else if(movX < 0f) {
+        }
+        else if (movX < 0f)
+        {
             // going left
             sr.flipX = true;
             anim.SetBool(WALK_ANIMATION, true);
@@ -75,22 +70,6 @@ public class Player : MonoBehaviour
         {
             anim.SetBool(WALK_ANIMATION, false);
         }
-    }
 
-    private void jumpPlayer()
-    {
-        if (Input.GetButtonDown("Jump") && onGround)
-        {
-            myBody.AddForce(new Vector2 (0, jumpForce), ForceMode2D.Impulse);
-            onGround = false;
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag(GROUND_TAG))
-        {
-            onGround = true;
-        }
     }
 }
