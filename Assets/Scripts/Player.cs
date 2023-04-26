@@ -39,15 +39,15 @@ public class Player : MonoBehaviour
     {
         moveKeyBoard();
         animatePlayer();
-        //jumpPlayer();
+        jumpPlayer();
         
     }
 
 
-    private void FixedUpdate()
-    {
-      jumpPlayer();
-    }
+    //private void FixedUpdate()
+    //{
+    //  jumpPlayer();
+    //}
     private void moveKeyBoard()
     {
         movX = Input.GetAxisRaw("Horizontal");
